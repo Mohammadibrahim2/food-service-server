@@ -9,7 +9,7 @@ const { MongoClient, ServerApiVersion,ObjectId } = require('mongodb');
 app.use(cors())
 app.use(express.json())
 
-const uri = "mongodb+srv://process.env.DB_USER:process.env.DB_PASSWORD@cluster0.6kcflds.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://servicesdb:HZHgos6YIy4owF6w@cluster0.6kcflds.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 async function run(){
@@ -58,8 +58,15 @@ async function run(){
 
          })
 
-         
-         
+      
+
+
+
+
+
+
+
+
 
          app.get("/allreviews",async(req,res)=>{
             const query={}
@@ -91,14 +98,17 @@ async function run(){
            res.send(review)
          })
 
-        
+
+
 
          app.delete("/deletereview/:id",async(req,res)=>{
-            const id=req.params._id
+            const id=req.params
             const query={_id: ObjectId(id)}
-            const result= await reviewsCollection.deleteOne(query)
             
-            res.send(id)
+            const result= await reviewsCollection.deleteOne(query)
+            console.log(req.params.id)
+            
+            res.send({result,id})
           
          })
 
@@ -120,8 +130,3 @@ app.listen(port,()=>{
 })
 
 
-//services
-//servicescollection
-
-//reviews
-//reviewscollection
