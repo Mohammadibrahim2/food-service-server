@@ -84,7 +84,7 @@ async function run(){
 
          })
        
-         //tjis post is done..
+         
          app.post("/singlereviews",async(req,res)=>{
             const review=req.body
            const result=await reviewsCollection.insertOne(review)
