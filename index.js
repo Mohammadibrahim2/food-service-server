@@ -97,7 +97,7 @@ async function run(){
             const id=req.params._id
             const query={_id: ObjectId(id)}
             const result= await reviewsCollection.deleteOne(query)
-            // console.log("deleting the id",id)
+            
             res.send(id)
           
          })
