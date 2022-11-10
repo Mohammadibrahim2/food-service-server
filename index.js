@@ -48,7 +48,6 @@ async function run(){
 
          })
         
-         
          app.post("/addservices",async(req,res)=>{
              
             const addedservice=req.body
@@ -60,7 +59,7 @@ async function run(){
          })
 
          
-         //.............Review api..................
+         
 
          app.get("/allreviews",async(req,res)=>{
             const query={}
