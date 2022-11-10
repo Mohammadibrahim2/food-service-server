@@ -47,7 +47,8 @@ async function run(){
             res.send(cursor)
 
          })
-        //adding more services=====done
+        
+         
          app.post("/addservices",async(req,res)=>{
              
             const addedservice=req.body
@@ -119,8 +120,7 @@ app.listen(port,()=>{
 
 })
 
-//servicesdb
-//HZHgos6YIy4owF6w
+
 //services
 //servicescollection
 
