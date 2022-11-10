@@ -52,7 +52,7 @@ async function run(){
              
             const addedservice=req.body
              const result=await serviceCollection.insertOne(addedservice)
-            // console.log(req.body)
+          
             res.send()
 
 
